@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript">
+	function createRequest() {
+		var xmlhttp;
+		if (window.XMLHttpRequest) {
+			xmlhttp = new XMLHttpRequest();
+		} else {
+			xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		return xmlhttp;
+	}
+	function addRecord() {
+		var req = createRequest();
+		var id = document.getElementById("ID");
+		var mark = document.getElementById("Mark");
+		var status = document.getElementById("Status");
+		
+	}
+	function getRecord() {
+		var req = createRequest();
+		var id = document.getElementById("ID");
+		var mark = document.getElementById("Mark");
+		var status = document.getElementById("Status");
+	}
+	function updateRecord() {
+		var req = createRequest();
+		var id = document.getElementById("ID");
+		var mark = document.getElementById("Mark");
+		var status = document.getElementById("Status");
+	}
+</script>
+</body>
+
+<body>
+<input type="text" id="ID" size="10" value="">
+<input type="text" id="Mark" size="5" value="">
+<input type="text" id="Status" size="30" value=""><br/>
+
+<button type="button" onclick="addRecord()">Add Record</button>
+<button type="button" onclick="getRecord()">Get Record</button>
+<button type="button" onclick="updateRecord()">Update Record</button>
+
+</body>
+</html>
