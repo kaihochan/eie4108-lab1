@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Student Marks</title>
+</head>
+
 <body>
 <script type="text/javascript">
 	function createRequest() {
@@ -16,10 +21,12 @@
 		var id = document.getElementById("ID");
 		var mark = document.getElementById("Mark");
 		var status = document.getElementById("Status");
+		var url = `http://localhost:8080/REST/Dome/mark/${id.value}+${mark.value}}`;
 		req.onreadystatechange = function () {
-			if ((req.readyState == 4) && (req.status == 200)) {}
+			if ((req.readyState == 4) && (req.status == 200)) 
+				status.value = `Record of ${id.value} added`;
 		}
-		req.open();
+		req.open("POST", url, true);
 		req.send();
 	}
 	function getRecord() {
@@ -27,10 +34,14 @@
 		var id = document.getElementById("ID");
 		var mark = document.getElementById("Mark");
 		var status = document.getElementById("Status");
+		var url = `http://localhost:8080/REST/Dome/x?id=${id.value}}`;
 		req.onreadystatechange = function () {
-			if ((req.readyState == 4) && (req.status == 200)) {}
+			if ((req.readyState == 4) && (req.status == 200)) {
+				mark.value = "";
+				status.value = `Mark of ${id.value}: ${req.responseText}`;
+			}
 		}
-		req.open();
+		req.open("GET", url, true);
 		req.send();
 	}
 	function updateRecord() {
@@ -38,10 +49,12 @@
 		var id = document.getElementById("ID");
 		var mark = document.getElementById("Mark");
 		var status = document.getElementById("Status");
+		var url = `http://localhost:8080/REST/Dome/mark/${id.value}+${mark.value}}`;
 		req.onreadystatechange = function () {
-			if ((req.readyState == 4) && (req.status == 200)) {}
+			if ((req.readyState == 4) && (req.status == 200))
+				status.value = `Record of ${id.value} updated`;
 		}
-		req.open();
+		req.open("POST", url, true);
 		req.send();
 	}
 </script>
