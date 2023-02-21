@@ -16,19 +16,33 @@
 		var id = document.getElementById("ID");
 		var mark = document.getElementById("Mark");
 		var status = document.getElementById("Status");
-		
+		req.onreadystatechange = function () {
+			if ((req.readyState == 4) && (req.status == 200)) {}
+		}
+		req.open();
+		req.send();
 	}
 	function getRecord() {
 		var req = createRequest();
 		var id = document.getElementById("ID");
 		var mark = document.getElementById("Mark");
 		var status = document.getElementById("Status");
+		req.onreadystatechange = function () {
+			if ((req.readyState == 4) && (req.status == 200)) {}
+		}
+		req.open();
+		req.send();
 	}
 	function updateRecord() {
 		var req = createRequest();
 		var id = document.getElementById("ID");
 		var mark = document.getElementById("Mark");
 		var status = document.getElementById("Status");
+		req.onreadystatechange = function () {
+			if ((req.readyState == 4) && (req.status == 200)) {}
+		}
+		req.open();
+		req.send();
 	}
 </script>
 </body>
