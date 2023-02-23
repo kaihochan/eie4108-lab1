@@ -38,7 +38,10 @@
 		req.onreadystatechange = function () {
 			if ((req.readyState == 4) && (req.status == 200)) {
 				mark.value = "";
-				status.value = `Mark of ${id.value}: ${req.responseText}`;
+				if (req.responseText != "")
+					status.value = `Mark of ${id.value}: ${req.responseText}`;
+				else
+					status.value = `Record of ${id.value} not exists`;
 			}
 		}
 		req.open("GET", url, true);
