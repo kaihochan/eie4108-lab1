@@ -5,9 +5,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Response;
 import javax.ws.rs.core.MediaType;
-import com.google.gson.Gson;
 import com.sun.jersey.spi.resource.Singleton;
 
 @Singleton
@@ -41,7 +39,7 @@ public class Database {
 	}
 	
 	@POST
-	@Path("{student}+{mark}")
+	@Path("{student}+{mark}/updated")
 	public String updateRecord(@PathParam("student") String student, @PathParam("mark") String mark) {
 	// Update a record using id as key and mark as value
 		if(!table.contains(student)) {
