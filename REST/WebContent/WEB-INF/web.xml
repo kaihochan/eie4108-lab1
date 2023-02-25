@@ -17,7 +17,7 @@
   </servlet>
   <servlet-mapping>
 	<servlet-name>Jersey REST Service</servlet-name>
-	<url-pattern>/database/*</url-pattern>
+	<url-pattern>/Database/*</url-pattern>
  	<url-pattern>/Dome/*</url-pattern>
   </servlet-mapping>
 </web-app>
