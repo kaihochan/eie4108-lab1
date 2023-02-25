@@ -14,7 +14,7 @@ public class Database {
 	private Hashtable<String,Integer> table = new Hashtable<String,Integer>();
 	
 	@POST
-	@Path("{student}+{mark}")
+	@Path("add/{student}+{mark}")
 	public String addRecord(@PathParam("student") String student, @PathParam("mark") String mark) {
 	// Add a record using id as key and mark as value
 		if(table.containsKey(student)) {
@@ -39,7 +39,7 @@ public class Database {
 	}
 	
 	@POST
-	@Path("{student}+{mark}/updated")
+	@Path("updated/{student}+{mark}")
 	public String updateRecord(@PathParam("student") String student, @PathParam("mark") String mark) {
 	// Update a record using id as key and mark as value
 		if(!table.contains(student)) {
