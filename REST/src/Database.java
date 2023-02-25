@@ -39,7 +39,7 @@ public class Database {
 	}
 	
 	@POST
-	@Path("updated/{student}+{mark}")
+	@Path("update/{student}+{mark}")
 	public String updateRecord(@PathParam("student") String student, @PathParam("mark") String mark) {
 	// Update a record using id as key and mark as value
 		if(!table.contains(student)) {
