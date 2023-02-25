@@ -22,7 +22,6 @@
 			var mark = document.getElementById("Mark");
 			var status = document.getElementById("Status");
 			var url = "http://localhost:8080/REST/Database/mark/add/"+id.value+"+"+mark.value;
-			//var url = `http://localhost:8080/REST/Dome/mark/${id.value}+${mark.value}}`;	
 			req.onreadystatechange = function() {
 				if ((req.readyState == 4) && (req.status == 200))
 					status.value = req.responseText;
@@ -36,7 +35,6 @@
 			var mark = document.getElementById("Mark");
 			var status = document.getElementById("Status");
 			var url = "http://localhost:8080/REST/Database/mark/?student="+id.value;
-			//var url = `http://localhost:8080/REST/Dome/x?id=${id.value}}`;
 			req.onreadystatechange = function() {
 				if ((req.readyState == 4) && (req.status == 200)) {
 					mark.value = "";
@@ -52,7 +50,6 @@
 			var mark = document.getElementById("Mark");
 			var status = document.getElementById("Status");
 			var url = "http://localhost:8080/REST/Database/mark/update/"+id.value+"+"+mark.value;
-			//var url = `http://localhost:8080/REST/Dome/mark/${id.value}+${mark.value}/updated}`;
 			req.onreadystatechange = function() {
 				if ((req.readyState == 4) && (req.status == 200))
 					status.value = req.responseText;
