@@ -11,7 +11,11 @@ import com.sun.jersey.spi.resource.Singleton;
 @Singleton
 @Path("/mark")
 public class Database {
-	private Hashtable<String,Integer> table = new Hashtable<String,Integer>();
+	private Hashtable<String,Integer> table;
+	
+	public Database() {
+		table = new Hashtable<String,Integer>();
+	}
 	
 	@POST
 	@Path("add/{student}+{mark}")
@@ -30,7 +34,7 @@ public class Database {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getMark(@QueryParam("student") String student) {
 	// Retrieve a record using id as key
-		if(!table.contains(student)) {
+		if(!table.containsKey(student)) {
 			System.out.println("Student not exists");
 			return String.format("Record of %s not exists", student);
 		}
@@ -42,7 +46,7 @@ public class Database {
 	@Path("update/{student}+{mark}")
 	public String updateRecord(@PathParam("student") String student, @PathParam("mark") String mark) {
 	// Update a record using id as key and mark as value
-		if(!table.contains(student)) {
+		if(!table.containsKey(student)) {
 			System.out.println("Student not exists");
 			return String.format("Record of %s not exists", student);
 		}
