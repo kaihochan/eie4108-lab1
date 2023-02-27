@@ -34,7 +34,7 @@
 			var id = document.getElementById("ID");
 			var mark = document.getElementById("Mark");
 			var status = document.getElementById("Status");
-			var url = "http://localhost:8080/REST/Database/mark/?student="+id.value;
+			var url = "http://localhost:8080/REST/Database/mark?student="+id.value;
 			req.onreadystatechange = function() {
 				if ((req.readyState == 4) && (req.status == 200)) {
 					mark.value = "";
